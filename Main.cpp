@@ -390,12 +390,12 @@ int main(int argc, char *argv[]) {
         double y = t;
 
         for (int iter = 0; iter < iters; ++iter) {
-          const double xx = x * x;
-          const double yy = y * y;
-          const double tt = t * t;
-          const double xy = x * y;
-          const double xt = x * t;
-          const double yt = y * t;
+          const double xx = x * sin(x);
+          const double yy = y * sin(y);
+          const double tt = t * sin(t);
+          const double xy = x * cos(y);
+          const double xt = x * cos(t);
+          const double yt = y * cos(t);
           const double nx = xx*params[0] + yy*params[1] + tt*params[2] + xy*params[3] + xt*params[4] + yt*params[5] + x*params[6] + y*params[7] + t*params[8];
           const double ny = xx*params[9] + yy*params[10] + tt*params[11] + xy*params[12] + xt*params[13] + yt*params[14] + x*params[15] + y*params[16] + t*params[17];
           x = nx;
