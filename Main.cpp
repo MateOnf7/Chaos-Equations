@@ -219,7 +219,7 @@ struct Res {
 int main(int argc, char *argv[]) {
   std::cout << "=========================================================" << std::endl;
   std::cout << std::endl;
-  std::cout << "                      Chaos Equations" << std::endl;
+  std::cout << "                      Chaos Equations - Trig " << std::endl;
   std::cout << std::endl;
   std::cout << "    These are plots of random recursive equations, which" << std::endl;
   std::cout << "often produce chaos, and results in beautiful patterns." << std::endl;
