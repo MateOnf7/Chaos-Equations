@@ -125,9 +125,9 @@ static sf::RectangleShape MakeBoundsShape(const sf::Text& text) {
 static std::string MakeEquationStr(double* params) {
   std::stringstream ss;
   bool isFirst = true;
-  SIGN_OR_SKIP(0, "sin(x) cos(x)\u00b2");
-  SIGN_OR_SKIP(1, "sin(y) cos(y)\u00b2");
-  SIGN_OR_SKIP(2, "tan^2(t)\u00b2");
+  SIGN_OR_SKIP(0, "sin(x) cos(x)");
+  SIGN_OR_SKIP(1, "sin(y) cos(y)");
+  SIGN_OR_SKIP(2, "tan\u00b2(t)");
   SIGN_OR_SKIP(3, "sin(x) cos(y)");
   SIGN_OR_SKIP(4, "sin(x) tan(t)");
   SIGN_OR_SKIP(5, "cos(y) tan(t)");
