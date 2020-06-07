@@ -19,8 +19,8 @@ static const int iters = 800;
 static const int steps_per_frame = 500;
 static const double delta_per_step = 1e-5;
 static const double delta_minimum = 1e-7;
-static const double t_start = -3.0;
-static const double t_end = 3.0;
+static const double t_start = -628;
+static const double t_end = 628;
 static const bool fullscreen = false;
 
 //Global variables
