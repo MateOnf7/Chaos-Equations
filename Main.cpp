@@ -125,12 +125,12 @@ static sf::RectangleShape MakeBoundsShape(const sf::Text& text) {
 static std::string MakeEquationStr(double* params) {
   std::stringstream ss;
   bool isFirst = true;
-  SIGN_OR_SKIP(0, "x\u00b2");
-  SIGN_OR_SKIP(1, "y\u00b2");
-  SIGN_OR_SKIP(2, "t\u00b2");
-  SIGN_OR_SKIP(3, "xy");
-  SIGN_OR_SKIP(4, "xt");
-  SIGN_OR_SKIP(5, "yt");
+  SIGN_OR_SKIP(0, "sin(x) cos(x)\u00b2");
+  SIGN_OR_SKIP(1, "sin(y) cos(y)\u00b2");
+  SIGN_OR_SKIP(2, "tan^2(t)\u00b2");
+  SIGN_OR_SKIP(3, "sin(x) cos(y)");
+  SIGN_OR_SKIP(4, "sin(x) tan(t)");
+  SIGN_OR_SKIP(5, "cos(y) tan(t)");
   SIGN_OR_SKIP(6, "x");
   SIGN_OR_SKIP(7, "y");
   SIGN_OR_SKIP(8, "t");
@@ -179,7 +179,7 @@ static void CreateRenderWindow(sf::RenderWindow& window) {
 
   //Create the window
   const sf::VideoMode screenSize(window_w, window_h, window_bits);
-  window.create(screenSize, "Chaos Equations", (fullscreen ? sf::Style::Fullscreen : sf::Style::Close), settings);
+  window.create(screenSize, "Chaos Equations - Trig by MateOnf7", (fullscreen ? sf::Style::Fullscreen : sf::Style::Close), settings);
   window.setFramerateLimit(60);
   window.setVerticalSyncEnabled(true);
   window.setActive(false);
@@ -390,9 +390,9 @@ int main(int argc, char *argv[]) {
         double y = t;
 
         for (int iter = 0; iter < iters; ++iter) {
-          const double xx = sin(x);
-          const double yy = cos(y);
-          const double tt = tan(t);
+          const double xx = sin(x) * cos(x);
+          const double yy = cos(y) * sin(y);
+          const double tt = tan(t) * tan(t);
           const double xy = sin(x) * cos(y);
           const double xt = sin(x) * tan(t);
           const double yt = cos(y) * tan(t);
